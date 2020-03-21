@@ -1,0 +1,260 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Terminology &mdash; oneDAL  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicons.png"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Programming model" href="programming_model/index.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="https://oneapi.com" class="icon icon-home"> oneDAL
+          
+
+          
+            
+            <img src="_static/oneapi-logo1.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programming_model/index.html">Programming model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common_interface/index.html">Common Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_management/index.html">Data management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms/index.html">Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">oneDAL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">oneAPI Specification</a> &raquo;</li>
+        
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/terminology.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="terminology">
+<span id="id1"></span><h1>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h1>
+<dl class="glossary simple">
+<dt id="term-batch-mode">Batch Mode</dt><dd><p>The computation mode for an algorithm in oneDAL, where all the data needed for
+computation are available at the start and fits the memory of the device where computations will
+be performed.</p>
+</dd>
+<dt id="term-dataset">Dataset</dt><dd><p>A pair of a matrix <span class="math notranslate nohighlight">\(X\)</span> of size <span class="math notranslate nohighlight">\(N * p\)</span> and a vector <span class="math notranslate nohighlight">\(Y\)</span> of size <span class="math notranslate nohighlight">\(N\)</span>, where <span class="math notranslate nohighlight">\(X\)</span>
+contains <span class="math notranslate nohighlight">\(N\)</span> <a class="reference internal" href="#term-feature-vector"><span class="xref std std-term">feature vectors</span></a> in rows and <span class="math notranslate nohighlight">\(Y\)</span> stores all corresponding
+responses. Vector <span class="math notranslate nohighlight">\(Y\)</span> is optional and may not be present if responses are unknown.</p>
+</dd>
+<dt id="term-dpc">DPC++</dt><dd><p>DPC++ — Technology (programming language, compiler, and runtime) that
+is based on SYCL* specification and extends it.</p>
+</dd>
+<dt id="term-feature">Feature</dt><dd><p>A single column of matrix <span class="math notranslate nohighlight">\(X\)</span> from a dataset.</p>
+</dd>
+<dt id="term-feature-vector">Feature vector</dt><dd><p>A single real-valued vector of length <span class="math notranslate nohighlight">\(p\)</span> that encodes information about a real
+object or an event.</p>
+</dd>
+<dt id="term-host-device">Host/Device</dt><dd><p>OpenCL <a class="reference internal" href="bibliography.html#openclspec" id="id2"><span>[OpenCLSpec]</span></a> terms for referring to CPU that controls the connected GPU executing kernels.</p>
+</dd>
+<dt id="term-jit">JIT</dt><dd><p>Just in Time Compilation — compilation during execution of a program.</p>
+</dd>
+<dt id="term-kernel">Kernel</dt><dd><p>Code written in OpenCL or SYCL and executed on a GPU device.</p>
+</dd>
+<dt id="term-observation">Observation</dt><dd><p>A pair of a <a class="reference internal" href="#term-feature-vector"><span class="xref std std-term">feature vector</span></a> and a response if response is known, otherwise a feature
+vector.</p>
+</dd>
+<dt id="term-model">Model</dt><dd><p>A result of training machine-learning algorithm that stores information necessary to run
+inference (prediction) on a new dataset.</p>
+</dd>
+<dt id="term-onedal">oneDAL</dt><dd><p>Data Analytics Library (oneDAL).</p>
+</dd>
+<dt id="term-online-mode">Online Mode</dt><dd><p>The computation mode for an algorithm in oneDAL, where the data needed for computation
+becomes available in parts during the time.</p>
+</dd>
+<dt id="term-response">Response</dt><dd><p>A single value corresponding to an observation. For example, response may be a label
+indicating that an observation belongs to a particular class.</p>
+</dd>
+<dt id="term-spir-v">SPIR-V</dt><dd><p>Standard Portable Intermediate Representation - V is a language for intermediate representation of compute kernels.</p>
+</dd>
+<dt id="term-sycl">SYCL</dt><dd><p>SYCL(TM) <a class="reference internal" href="bibliography.html#syclspec" id="id3"><span>[SYCLSpec]</span></a> — high-level programming model for OpenCL(TM) that enables code for heterogeneous
+processors to be written in a “single-source” style using completely standard C++.</p>
+</dd>
+<dt id="term-use-case">Use case</dt><dd><p>A scenario that describes how a user might interact with a oneDAL algorithm.</p>
+</dd>
+<dt id="term-workload">Workload</dt><dd><p>A task of applying a oneDAL algorithm to a dataset.</p>
+</dd>
+</dl>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="programming_model/index.html" class="btn btn-neutral float-right" title="Programming model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Intel
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
