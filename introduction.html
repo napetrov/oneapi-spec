@@ -161,15 +161,48 @@
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <p>Data Analytics Library (oneDAL) is a library that provides building blocks covering all stages of data analytics: data acquisition
 from a data source, preprocessing, transformation, data mining, modeling, validation and decision making.</p>
+<a class="reference internal image-reference" href="_images/data_analytics_stages.png"><img alt="Data analytis stages" src="_images/data_analytics_stages.png" style="width: 800px;" /></a>
 <p>oneDAL supports the concept of the end-to-end analytics when some of data analytics stages are performed on the
 edge devices (close to where the data is generated and where it is finally consumed). Specifically,
 oneDAL Application Programming Interfaces (APIs) are agnostic about a particular cross-device
 communication technology and therefore can be used within different end-to-end analytics frameworks.</p>
-<p>Library consists of the following major components:</p>
+<a class="reference internal image-reference" href="_images/e2eframeworks.png"><img alt="End to End Analytics Frameworks" src="_images/e2eframeworks.png" style="width: 800px;" /></a>
+<p>oneDAL consists of the following major components:</p>
+<blockquote>
+<div><ul>
+<li><p>The <a class="reference internal" href="data_management/index.html#data-management"><span class="std std-ref">Data Management</span></a> component includes classes and utilities for data acquisition, initial preprocessing and normalization,
+for data conversion into numeric formats done by one of supported Data Sources, and for model representation.</p></li>
+<li><p>The <a class="reference internal" href="algorithms/index.html#algorithms"><span class="std std-ref">Algorithmst</span></a> component consists of classes that implement algorithms for data analysis (data mining), and data modeling
+(training and prediction). These algorithms include matrix decompositions, clustering, classification, and regression
+algorithms, as well as association rules discovery.
+Algorithms support the following computation modes:</p>
 <ul class="simple">
-<li><p>Data Management</p></li>
-<li><p>Algorithms</p></li>
+<li><p><a class="reference internal" href="programming_model/computational_modes.html#batch"><span class="std std-ref">Batch processing</span></a></p></li>
+<li><p><a class="reference internal" href="programming_model/computational_modes.html#online"><span class="std std-ref">Online processing</span></a></p></li>
+<li><p><a class="reference internal" href="programming_model/computational_modes.html#distributed"><span class="std std-ref">Distributed processing</span></a></p></li>
 </ul>
+<p>In the batch processing mode, the algorithm works with the entire data set to produce the final result. A more
+complex scenario occurs when the entire data set is not available at the moment or the data set does not fit
+into the device memory.</p>
+<p>In the online processing mode, the algorithm processes a data set in blocks streamed into device memory by doing
+incrementally updating partial results, which are finalized upon processing of the last data block.</p>
+<p>In the distributed processing mode, the algorithm operates on a data set distributed across several devices
+(compute nodes). The algorithm produces partial results on each node, which are finally merged into the final
+result on the master node.</p>
+<p>Distributed algorithms in oneDAL are abstracted from underlying cross-device communication technology,
+which enables use of the library in a variety of multi-device computing and data transfer scenarios.</p>
+<p>Depending on the usage, algorithms operate both on actual data (data set) and data models.
+Analysis algorithms typically operate on data sets. Training algorithms typically operate
+on a data set to train an appropriate data model. Prediction algorithms typically work with
+the trained data model and with a working data set.</p>
+</li>
+<li><p>The <strong>Services</strong> component includes classes and utilities used across Data Management and Algorithms components.
+These classes enable memory allocation, error handling.</p></li>
+</ul>
+</div></blockquote>
+<p>Classes in Data Management, Algorithms, and Services components cover the most important usage scenarios and allow
+seamless implementation of complex data analytics workflows through direct API calls. At the same time the library
+is an object-oriented framework that helps customize the API by redefining particular classes and methods of the library.</p>
 </div>
 
 
