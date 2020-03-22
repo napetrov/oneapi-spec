@@ -161,10 +161,9 @@
 <span id="id1"></span><h1>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h1>
 <dl class="glossary simple">
 <dt id="term-batch-mode">Batch Mode</dt><dd><p>The computation mode for an algorithm in oneDAL, where all the data needed for
-computation are available at the start and fits the memory of the device where computations will
-be performed.</p>
+computation is available at the start and fits the memory of the device on which the computations are performed.</p>
 </dd>
-<dt id="term-dataset">Dataset</dt><dd><p>A pair of a matrix <span class="math notranslate nohighlight">\(X\)</span> of size <span class="math notranslate nohighlight">\(N * p\)</span> and a vector <span class="math notranslate nohighlight">\(Y\)</span> of size <span class="math notranslate nohighlight">\(N\)</span>, where <span class="math notranslate nohighlight">\(X\)</span>
+<dt id="term-dataset">Dataset</dt><dd><p>A pair of a matrix <span class="math notranslate nohighlight">\(X\)</span> of size <span class="math notranslate nohighlight">\(N \times p\)</span> and a vector <span class="math notranslate nohighlight">\(Y\)</span> of size <span class="math notranslate nohighlight">\(N\)</span>, where <span class="math notranslate nohighlight">\(X\)</span>
 contains <span class="math notranslate nohighlight">\(N\)</span> <a class="reference internal" href="#term-feature-vector"><span class="xref std std-term">feature vectors</span></a> in rows and <span class="math notranslate nohighlight">\(Y\)</span> stores all corresponding
 <a class="reference internal" href="#term-response"><span class="xref std std-term">responses</span></a>. Vector <span class="math notranslate nohighlight">\(Y\)</span> is optional and may not be present if responses are unknown.</p>
 </dd>
@@ -176,13 +175,13 @@ DPC++ is based on <a class="reference internal" href="#term-sycl"><span class="x
 <dt id="term-feature-vector">Feature vector</dt><dd><p>A single real-valued vector of length <span class="math notranslate nohighlight">\(p\)</span> that encodes information about a real
 object or an event.</p>
 </dd>
-<dt id="term-host-device">Host/Device</dt><dd><p>OpenCL <a class="reference internal" href="bibliography.html#openclspec" id="id2"><span>[OpenCLSpec]</span></a> terms for referring to CPU that controls the connected GPU executing kernels.</p>
+<dt id="term-host-device">Host/Device</dt><dd><p>OpenCL <a class="reference internal" href="bibliography.html#openclspec" id="id2"><span>[OpenCLSpec]</span></a> refers to CPU that controls the connected GPU executing kernels.</p>
 </dd>
 <dt id="term-jit">JIT</dt><dd><p>Just in Time Compilation — compilation during execution of a program.</p>
 </dd>
-<dt id="term-kernel">Kernel</dt><dd><p>Code written in OpenCL or SYCL and executed on a GPU device.</p>
+<dt id="term-kernel">Kernel</dt><dd><p>Code written in OpenCL <a class="reference internal" href="bibliography.html#openclspec" id="id3"><span>[OpenCLSpec]</span></a> or <a class="reference internal" href="#term-sycl"><span class="xref std std-term">SYCL</span></a> and executed on a GPU device.</p>
 </dd>
-<dt id="term-observation">Observation</dt><dd><p>A pair of a <a class="reference internal" href="#term-feature-vector"><span class="xref std std-term">feature vector</span></a> and a response if response is known, otherwise a feature
+<dt id="term-observation">Observation</dt><dd><p>A pair of a <a class="reference internal" href="#term-feature-vector"><span class="xref std std-term">feature vector</span></a> and a <a class="reference internal" href="#term-response"><span class="xref std std-term">response</span></a> if response is known, otherwise a feature
 vector.</p>
 </dd>
 <dt id="term-model">Model</dt><dd><p>A result of training machine-learning algorithm that stores information necessary to run
@@ -191,14 +190,14 @@ inference (prediction) on a new dataset.</p>
 <dt id="term-onedal">oneDAL</dt><dd><p>Data Analytics Library (oneDAL).</p>
 </dd>
 <dt id="term-online-mode">Online Mode</dt><dd><p>The computation mode for an algorithm in oneDAL, where the data needed for computation
-becomes available in parts during the time.</p>
+becomes available in parts over time.</p>
 </dd>
-<dt id="term-response">Response</dt><dd><p>A single value corresponding to an observation. For example, response may be a label
+<dt id="term-response">Response</dt><dd><p>A single value corresponding to an <a class="reference internal" href="#term-observation"><span class="xref std std-term">observation</span></a>. For example, response may be a label
 indicating that an observation belongs to a particular class.</p>
 </dd>
 <dt id="term-spir-v">SPIR-V</dt><dd><p>Standard Portable Intermediate Representation - V is a language for intermediate representation of compute kernels.</p>
 </dd>
-<dt id="term-sycl">SYCL</dt><dd><p>SYCL(TM) <a class="reference internal" href="bibliography.html#syclspec" id="id3"><span>[SYCLSpec]</span></a> — high-level programming model for OpenCL(TM) that enables code for heterogeneous
+<dt id="term-sycl">SYCL</dt><dd><p>SYCL(TM) <a class="reference internal" href="bibliography.html#syclspec" id="id4"><span>[SYCLSpec]</span></a> — high-level programming model for OpenCL(TM) that enables code for heterogeneous
 processors to be written in a “single-source” style using completely standard C++.</p>
 </dd>
 <dt id="term-use-case">Use case</dt><dd><p>A scenario that describes how a user might interact with a oneDAL algorithm.</p>
